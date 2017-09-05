@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Display = ({display}) => {
+const Display = ({giphyObject}) => {
   return(
     <div>
       <p>Display component</p>
