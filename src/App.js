@@ -12,23 +12,24 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      term: 'soccer',
-      display: '' 
+      term: '',
+      display: ''  
     }
-    
-    this.giphyCall = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${this.state.term}&limit=25&offset=0&rating=G&lang=en`
+
     this.handleInput = this.handleInput.bind(this)
     this.getGiphy = this.getGiphy.bind(this)
   }
 
   getGiphy = function(){
-    axios.get(this.giphyCall)
+    let call = `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${this.state.term}&limit=25&offset=0&rating=G&lang=en`
+    axios.get(call)
       .then((response) => this.setState({display: response}))
       .catch((error) => console.log(error))
   }   
 
   handleInput = function(event){
     this.setState({term: event.target.value })
+    this.getGiphy()
   }
 
   render() {

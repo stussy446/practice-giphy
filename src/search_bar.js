@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SearchBar = ({term}) => {
+const SearchBar = ({term, handleInput}) => {
   return(
     <div>
-      <p>Hi</p>
+      <input type="text" placeholder="search giphy" onChange={handleInput}></input>
     </div>
   )
 
