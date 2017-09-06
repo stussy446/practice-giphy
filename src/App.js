@@ -28,8 +28,10 @@ class App extends Component {
   }   
 
   handleInput = function(event){
-    this.setState({term: event.target.value })
-    this.getGiphy()
+    if(event.target.value != ''){
+      this.setState({term: event.target.value })
+      this.getGiphy()
+    }
   }
 
   render() {
