@@ -2,13 +2,13 @@ import React from 'react';
 
 const Display = ({giphyObject}) => {
   if(!giphyObject){
-    return(<p>Loading...</p>)
+    return(<p>enter a search!</p>)
   }
   
   let giph = giphyObject['data']['data']['0']['images']['original']['url']
   return(
     <div>
-      <p>Display component</p>
+      <p>YOUR GIPHY</p>
       <img src={giph}/>
     </div>
   )
